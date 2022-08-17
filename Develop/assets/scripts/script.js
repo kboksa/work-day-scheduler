@@ -8,10 +8,15 @@ $("#currentDay").html(todayDate);
 /*WHEN I scroll down
 THEN I am presented with timeblocks for standard business hours*/
 var hourLength = 9;
+var hour = $(".hour");
+var save = $(".saveBtn");
+var eventColumn = $(".time-block");
+var save = $(".deleteBtn");
+var userMessage = $(".textarea");
 
 for (let i = 0; i < hourLength; i++) {
   var eventColumn = $("div");
-  eventColumn.addClass("rox time-block");
+  eventColumn.addClass("row time-block");
 }
 /*WHEN I view the timeblocks for that day
 THEN each timeblock is color coded to indicate whether it is in the past,
