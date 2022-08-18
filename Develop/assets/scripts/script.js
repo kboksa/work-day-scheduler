@@ -5,7 +5,7 @@ THEN the current day is displayed at the top of the calendar*/
 // var todayDate = moment().format("MMM. Do YYYY");
 // $("#currentDay").html(todayDate);
 
-$(".jumbotron").append($("<p>")).addClass("par");
+$(".jumbotron").append($("<p>").addClass("par"));
 
 let interval = setInterval(() => {
   let currentTime = dayjs().format("hh:mm:ss a");
