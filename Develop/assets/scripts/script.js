@@ -74,24 +74,25 @@ THEN each timeblock is color coded to indicate whether it is in the past,
 var userMessage = $(".textarea");
 /*WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage*/
-function saveInfo(n) {
-  $(saveBtn[n]).on("click", function (event) {
-    event.preventDefault();
+var saveBtn = $(".saveBtn");
+$(saveBtn).on("click", function (event) {
+  event.preventDefault();
+  console.log("clicked");
+  var key = $(this).siblings(".textarea").attr("id");
 
-    var message = $(userMessage[n]).val();
-    if (message !== "") {
-      localStorage.setItem("Todo-" + (n + hour.length) + ":00", message);
-    }
-  });
-}
+  var message = $(userMessage).val();
+  console.log(key, message);
+});
 
-function deleteInfo(n) {
-  $(deleteBtn[n]).on("click", function (event) {
-    event.preventDefault();
-    localStorage.removeItem("Todo-" + (n + hour.length) + ":00");
-    $(userMessage[n]).text("");
-  });
-}
+var deleteBtn = $(".deleteBtn");
+$(deleteBtn).on("click", function (event) {
+  event.preventDefault();
+  console.log("clicked");
+  var key = $(this).siblings(".textarea").attr("id");
+
+  var message = $(userMessage).val();
+  console.log(key, message);
+});
 
 /*WHEN I refresh the page
 THEN the saved events persist*/
@@ -101,3 +102,4 @@ for (var i = 0; i < hour.length; i++) {
   saveInfo(i);
   deleteInfo(i);
 }
+var saveBtn = $(".saveBtn");
