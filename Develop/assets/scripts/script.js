@@ -33,7 +33,7 @@ for (let i = 0; i < hourLength; i++) {
   var userMessage = $("<textarea>");
   userMessage.addClass("textarea col-9 description").attr("id", i + 9);
 
-  var saveBtn = $("<button>");
+  let saveBtn = $("<button>");
   saveBtn.addClass("saveBtn col-1");
 
   var iconSave = $("<i>");
@@ -50,6 +50,14 @@ for (let i = 0; i < hourLength; i++) {
   eventColumn.append(hour);
   eventColumn.append(userMessage);
   eventColumn.append(saveBtn);
+  $(saveBtn).on("click", function (event) {
+    event.preventDefault();
+    console.log("clicked");
+    var key = $(this).siblings(".textarea").attr("id");
+
+    var message = $(userMessage).val();
+    localStorage.setItem(key, message);
+  });
   // eventColumn.append(deleteBtn);
   $(".container").append(eventColumn);
 }
@@ -100,7 +108,7 @@ function saveInfo() {
 /*WHEN I refresh the page
 THEN the saved events persist*/
 for (var i = 0; i < hour.length; i++) {
-  var userInput = localStorage.setItem("Todo-" + texArea.length);
+  var userInput = localStorage.getItem(i + 9);
   $(userMessage[i]).text(userInput);
   saveInfo(i);
   // deleteInfo(i);
