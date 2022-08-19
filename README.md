@@ -13,7 +13,7 @@ https://kboksa.github.io/work-day-scheduler/
 
 ## Usage
 
-The user is able to add to the work day schedule and save their input. After the time pass the blocks turn red. When it is in the present they turn green, and if it is in the furtue they are grey.
+The user is able to add to the work day schedule and save their input. After the time pass the blocks turn grey. When it is in the present they turn red, and if it is in the future they are green.
 
 ![alt text](develop/assets/images/screenshot.png)
 
