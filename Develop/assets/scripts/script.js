@@ -39,18 +39,18 @@ for (let i = 0; i < hourLength; i++) {
   var iconSave = $("<i>");
   iconSave.addClass("far fa-save");
 
-  var deleteBtn = $("<button>");
-  deleteBtn.addClass("deleteBtn col-1");
+  // var deleteBtn = $("<button>");
+  // deleteBtn.addClass("deleteBtn col-1");
 
-  var iconDelete = $("<i>");
-  iconDelete.addClass("fas fa-trash-alt");
+  // var iconDelete = $("<i>");
+  // iconDelete.addClass("fas fa-trash-alt");
 
   saveBtn.append(iconSave);
-  deleteBtn.append(iconDelete);
+  // deleteBtn.append(iconDelete);
   eventColumn.append(hour);
   eventColumn.append(userMessage);
   eventColumn.append(saveBtn);
-  eventColumn.append(deleteBtn);
+  // eventColumn.append(deleteBtn);
   $(".container").append(eventColumn);
 }
 
@@ -87,22 +87,22 @@ function saveInfo() {
   });
 }
 
-var deleteBtn = $(".deleteBtn");
-$(deleteBtn).on("click", function (event) {
-  event.preventDefault();
-  console.log("clicked");
-  var key = $(this).siblings(".textarea").attr("id");
+// var deleteBtn = $(".deleteBtn");
+// $(deleteBtn).on("click", function (event) {
+//   event.preventDefault();
+//   console.log("clicked");
+//   var key = $(this).siblings(".textarea").attr("id");
 
-  var message = $(userMessage).val();
-  console.log(key, message);
-});
+//   var message = $(userMessage).val();
+//   console.log(key, message);
+// });
 
 /*WHEN I refresh the page
 THEN the saved events persist*/
 for (var i = 0; i < hour.length; i++) {
-  var userInput = localStorage.getItem("Todo-" + (i + hour.length) + ":00");
+  var userInput = localStorage.setItem("Todo-" + texArea.length);
   $(userMessage[i]).text(userInput);
   saveInfo(i);
-  deleteInfo(i);
+  // deleteInfo(i);
 }
 var saveBtn = $(".saveBtn");
